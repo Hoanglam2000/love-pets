@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Blog() {
     const posts = [
       { id: 1, title: "Cách chăm sóc chó con", content: "Những điều cần biết khi nuôi chó con." },
@@ -12,6 +14,9 @@ export default function Blog() {
             <div key={post.id} className="border p-4 rounded-lg">
               <h2 className="text-xl font-semibold">{post.title}</h2>
               <p className="text-gray-600">{post.content}</p>
+              <Link href={`/blog/${post.id}`} className="text-blue-500 hover:underline">
+              Xem thêm
+              </Link>
             </div>
           ))}
         </div>
